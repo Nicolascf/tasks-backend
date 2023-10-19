@@ -65,21 +65,27 @@
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
-				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.11</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>prepare-agent</goal>
-						</goals>
-					</execution>
-				</executions>
+			<artifactId>jacoco-maven-plugin</artifactId>
+			<version>0.8.7</version>
+			<executions>
+				<execution>
+				<id>prepare-agent</id>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+				</execution>
+				<execution>
+				<id>report</id>
+				<goals>
+					<goal>report</goal>
+				</goals>
 				<configuration>
-					<destFile>${sonar.jacoco.reportPath}</destFile>
 					<formats>
-              			<format>XML</format>
-            		</formats>
+					<format>XML</format>
+					</formats>
 				</configuration>
+				</execution>
+			</executions>
 			</plugin>
 		</plugins>
 	</build>
