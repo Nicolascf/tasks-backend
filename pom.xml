@@ -15,14 +15,12 @@
 	<name>tasks-backend</name>
 	<packaging>war</packaging>
 	<description>A very simple task management tool</description>
-
 	<properties>
 		<java.version>1.8</java.version>
 		<sonar.core.codeCoveragePlugin>jacoco</sonar.core.codeCoveragePlugin>
 		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-		<sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+		<sonar.jacoco.reportPath>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPath>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,7 +35,6 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -55,7 +52,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<finalName>tasks-backend</finalName>
 		<plugins>
@@ -65,29 +61,19 @@
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
-			<artifactId>jacoco-maven-plugin</artifactId>
-			<version>0.8.7</version>
-			<executions>
-				<execution>
-				<id>prepare-agent</id>
-				<goals>
-					<goal>prepare-agent</goal>
-				</goals>
-				</execution>
-				<execution>
-				<id>report</id>
-				<goals>
-					<goal>report</goal>
-				</goals>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.3</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<formats>
-              			<format>XML</format>
-            		</formats>
+					<destFile>${sonar.jacoco.reportPath}</destFile>
 				</configuration>
-				</execution>
-			</executions>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
