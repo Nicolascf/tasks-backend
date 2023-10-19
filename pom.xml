@@ -81,8 +81,8 @@
 				</goals>
 				<configuration>
 					<formats>
-					<format>XML</format>
-					</formats>
+              			<format>XML</format>
+            		</formats>
 				</configuration>
 				</execution>
 			</executions>
