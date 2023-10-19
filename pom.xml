@@ -75,10 +75,10 @@
 					</execution>
 				</executions>
 				<configuration>
-					<destFile>${sonar.jacoco.reportPath}</destFile>
 					<formats>
-              			<format>XML</format>
-            		</formats>
+              					<format>XML</format>
+            				</formats>
+					<destFile>${sonar.jacoco.reportPath}</destFile>
 				</configuration>
 			</plugin>
 		</plugins>
