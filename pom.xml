@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>br.ce.wcaquino</groupId>
 	<artifactId>tasks-backend</artifactId>
-	<version>3</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>tasks-backend</name>
 	<packaging>war</packaging>
 	<description>A very simple task management tool</description>
@@ -62,7 +62,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.7</version>
+				<version>0.8.3</version>
 				<executions>
 					<execution>
 						<goals>
